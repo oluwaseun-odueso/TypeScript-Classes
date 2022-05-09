@@ -20,12 +20,12 @@ class Rectangle {
     }
 
     // Set width 
-    set Width(updateWidth) {
+    set Width(updateWidth : number) {
         this.width = updateWidth 
     }
 
     // Set height
-    set Height(updateHeight) {
+    set Height(updateHeight : number) {
         this.height = updateHeight
     }
 

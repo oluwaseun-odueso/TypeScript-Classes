@@ -15,7 +15,7 @@ class Account {
         return this.id;
     }
 
-// To get balance 
+    // To get balance 
     get Balance() : number {
         return this.balance;
     }
@@ -51,15 +51,15 @@ class Account {
     }
 
     // To get balance after withdrawal
-    withdraw(amount) {
-        this._balance = this.balance - amount
-        return this._balance
+    withdraw(amount : number) {
+        this.balance = this.balance - amount
+        return this.balance
     }
 
     // To get balance after deposit
-    deposit(amount) {
-        this._balance = this._balance + amount
-        return this._balance
+    deposit(amount : number) {
+        this.balance = this.balance + amount
+        return this.balance
     }
 };  
 
@@ -67,5 +67,5 @@ class Account {
 const user = new Account(1122, 20000, 4.5);
 user.withdraw(2500);
 user.deposit(3000);
-console.log("The id is", user.id, "the balance is", user.balance, "monthly interest rate is", user.monthlyInterestRate, 
-"the monthly interest is", user.monthlyInterest);
+console.log("The id is", user.id + ',', "the balance is", user.balance + ',', "monthly interest rate is", user.monthlyInterestRate, 
+"and the monthly interest is", user.monthlyInterest);
