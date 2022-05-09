@@ -1,0 +1,71 @@
+// Create an account class
+class Account {
+    id : number
+    balance : number
+    annualInterestRate : number
+
+    constructor(id = 0, balance = 100, annualInterestRate = 0) {
+        this.id = id;
+        this.balance = balance;
+        this.annualInterestRate = annualInterestRate;
+    }
+
+    // To get id 
+    get Id() : number {
+        return this.id;
+    }
+
+// To get balance 
+    get Balance() : number {
+        return this.balance;
+    }
+
+    // To get annual interest rate
+    get AnnualInterestRate() : number {
+        return this.annualInterestRate;
+    }
+
+    // To get monthly interest rate
+    get monthlyInterestRate() : number {
+        return ((this.annualInterestRate / 100) / 12)
+    }
+
+    // To get monthly interest 
+    get monthlyInterest() : number{
+        return (this.balance * this.monthlyInterestRate)
+    }
+
+    // To set id
+    set Id(id) {
+        this.id = id
+    }
+
+    // Set balance
+    set Balance(balance) {
+        this.balance = balance
+    }
+
+    // Set annual interest rate
+    set AnnualInterestRate(annualInterestRate) {
+        this.annualInterestRate = annualInterestRate
+    }
+
+    // To get balance after withdrawal
+    withdraw(amount) {
+        this._balance = this.balance - amount
+        return this._balance
+    }
+
+    // To get balance after deposit
+    deposit(amount) {
+        this._balance = this._balance + amount
+        return this._balance
+    }
+};  
+
+// Write a main program
+const user = new Account(1122, 20000, 4.5);
+user.withdraw(2500);
+user.deposit(3000);
+console.log("The id is", user.id, "the balance is", user.balance, "monthly interest rate is", user.monthlyInterestRate, 
+"the monthly interest is", user.monthlyInterest);
